@@ -98,10 +98,22 @@ void reemplazarValores(NodoBinario* raiz, int valor)
 }
 
 //Devuelve la cantidad de bits "encendidos" o con el valores de 1
+bool Bit(char valor, int pos)
+{
+int mascara = 1;
+mascara = mascara<<pos;
+return valor & mascara;
+}
 int contarBits(char byte)
 {
-//BIM BUM BAM
-    return -1;
+  int contara=0;
+  for(int n=0;n<8;n++)
+  {
+      if(Bit(byte,n)){
+          contara++;
+      }
+  }
+  return contara;
 }
 
 int main ()
